@@ -80,11 +80,10 @@ public class ReverseGroupSol {
         }
         class ReverseGroup{
             public void revgrp(int start,int end){
-                if (start > j) {
+                if (end > j) {
                     return;
                 }
                 
-                end = Math.min(end, j);
                 int tempI = start;
                 int tempJ = end;
                 while (tempI < tempJ) {
