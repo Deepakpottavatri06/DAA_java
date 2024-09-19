@@ -27,6 +27,6 @@ public class MoveZero {
         for (int k : arr) {
             System.out.print(k+" ");
         }
-        
+        cin.close();
     }
 }
