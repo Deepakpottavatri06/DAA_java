@@ -9,7 +9,7 @@ public class GCD {
         }
         Arrays.sort(arr);
         System.out.println(Gcd(arr[arr.length-1],arr[0]));
-        
+        cin.close();
     }
     private static int Gcd(int large , int small){
         if(small==0){

@@ -7,6 +7,7 @@ public class ReverseString {
         String rev = "";
         rev = reverse(inp,0);
         System.out.println(rev);
+        cin.close();
     }
     
     private static String reverse(String inp,int index){

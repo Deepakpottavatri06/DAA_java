@@ -74,6 +74,7 @@ public class KthIndex {
         int k = cin.nextInt();
         int kth = kthIndex(n,  k);
         System.out.println(kth);
+        cin.close();
     }
     private static int kthIndex(int n,int k){
         if(n==1){

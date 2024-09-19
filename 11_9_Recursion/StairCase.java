@@ -50,6 +50,7 @@ public class StairCase {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(fibonacci(n+1));
+        sc.close();
     }
     private static int fibonacci(int n) {
         if (n == 0) {

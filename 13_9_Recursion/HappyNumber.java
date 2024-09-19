@@ -5,6 +5,7 @@ public class HappyNumber {
         Scanner cin  = new Scanner(System.in);
         int inp = cin.nextInt();
         System.out.println(findHappyNum(inp));
+        cin.close();
     }
     private static boolean findHappyNum(int inp){
         if(inp<10){
