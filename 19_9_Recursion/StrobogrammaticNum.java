@@ -1,5 +1,13 @@
 import java.util.*;
-
+/* A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down). 
+A strobogrammatic number must consist of only the digits 0, 1, 6, 8, and 9. 
+Each of these digits either remains the same or transforms into another valid strobogrammatic digit when rotated:
+	0 rotates to 0
+	1 rotates to 1
+	6 rotates to 9
+	8 rotates to 8
+	9 rotates to 6
+ */
 public class StrobogrammaticNum {
     public static void main(String[] args) {
         Scanner cin =  new Scanner(System.in);
