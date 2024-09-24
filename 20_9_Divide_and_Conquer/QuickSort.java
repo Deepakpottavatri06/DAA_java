@@ -76,5 +76,6 @@ public class QuickSort {
     }
      quickSort(arr, 0,arr.length-1 );
      System.out.println(Arrays.toString(arr));   
+     cin.close();
     }
 }
