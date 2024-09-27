@@ -19,9 +19,11 @@ public class SmallestComEle {
     private static int smallestCommonElement(int [][]arr){
         int first [] = arr[0];
         int result = -1;
-        for (int i = 0; i < first.length; i++) {
+        int lastEle = first[first.length-1];
+        outer : for (int i = 0; i < first.length; i++) {
             boolean flag = true;
-            for(int j = 1; i<arr.length ; j++){
+            for(int j = 1; j<arr.length ; j++){
+                if(lastEle<arr[j][0]) break outer;
                 if(binarySearch(arr[j],first[i], 0, arr[j].length-1)==-1){
                     flag = false;
                     break;
@@ -46,6 +48,7 @@ public class SmallestComEle {
         }
         int smallestCE = smallestCommonElement(arr);
         System.out.println("smallest "+smallestCE);
+        cin.close();
     }
     
 }
