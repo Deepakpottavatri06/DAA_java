@@ -76,7 +76,10 @@ public class SearchSortedMatrix {
         }
 
         System.out.println("row : "+low);
-        return (arr[low][col]>=target)? low: -1;
+        if (low < arr.length && arr[low][col] >= target) {
+        return low;
+        }
+        return -1;
     }
     private  static int[] binarySearch(int [][] arr, int target){
         int row = binarySearchVertical(arr, target);
