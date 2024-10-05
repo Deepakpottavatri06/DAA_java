@@ -60,7 +60,7 @@ public class QuickSort {
     } 
     private static void quickSort(int [] arr,int low,int high){
         if(low<high){
-            int pivotIndex = hoarsePartition(arr, low, high);
+            int pivotIndex = partitionLow(arr, low, high);
             quickSort(arr, low, pivotIndex-1);
             quickSort(arr, pivotIndex+1, high);
         }

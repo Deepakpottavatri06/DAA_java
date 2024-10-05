@@ -54,4 +54,5 @@ public class MajorityEle {
         int rightCount = count(arr, low, high, right);
         return (leftCount > rightCount) ? left : right;
     }
+    
 }

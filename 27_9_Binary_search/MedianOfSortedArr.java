@@ -38,7 +38,7 @@ public class MedianOfSortedArr {
             int maxLeftY = (midY==0)? Integer.MIN_VALUE : arr2[midY-1];
             int minRightY = (midY==arr2.length)?Integer.MAX_VALUE : arr2[midY];
 
-            if ((maxLeftX<minRightY)&&(maxLeftY<minRightX)) {
+            if ((maxLeftX<=minRightY)&&(maxLeftY<=minRightX)) {
                 if((x+y)%2==0){
                     return ((double)(Math.max(maxLeftX, maxLeftY)+Math.min(minRightX, minRightY))/2);
                 }

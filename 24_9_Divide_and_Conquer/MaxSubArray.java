@@ -56,12 +56,41 @@ public class MaxSubArray {
 
             int leftMaxScore = maxSubArray(arr,low,mid);
             int rightMaxScore = maxSubArray(arr,mid+1,high);
-            int maxSoFar  = arr[low];
+            int acrossMiddleScore = findAcrossSum(arr,low,mid,high);
 
+          return Math.max(Math.max(rightMaxScore, leftMaxScore), acrossMiddleScore);
         }
         return arr[low];
     }
+    private static int findAcrossSum(int [] arr, int low , int mid , int high){
+        int leftMax = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int i = mid; i >=low; i--) {
+          sum+=arr[i];
+          if(sum>leftMax){
+            leftMax = sum;
+          }
+        }
+        int rightMax = Integer.MIN_VALUE;
+        sum = 0;
+        for (int i = mid+1; i <= high; i++) {
+            sum+=arr[i];
+            if(sum>rightMax){
+              rightMax=sum;
+            }
+        }
+
+        return leftMax+rightMax;
+    }
   public static void main(String[] args) {
-    
+      Scanner cin = new Scanner(System.in);
+      int n = cin.nextInt();
+      int [] arr = new int[n];
+      for (int i = 0; i < n; i++) {
+          arr[i] = cin.nextInt();
+      }
+      int maxSum = maxSubArray(arr, 0, n-1);
+      System.out.println(maxSum);
+      cin.close();
   }   
 }

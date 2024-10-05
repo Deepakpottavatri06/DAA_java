@@ -101,5 +101,6 @@ public class PeakHouses {
         PeakHouses ph = new PeakHouses();
         ph.divide(arr, 0, n-1);
         System.out.println(ph.result);
+        cin.close();
     }
 }
