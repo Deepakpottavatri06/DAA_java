@@ -46,8 +46,63 @@ Constraints:
 
  */
 
+import java.util.*;
+
 public class PrimMST {
-    public static void main(String[] args) {
-        
+
+    private static int minKey(List<Integer> key, Set mstSet, int v) {
+        int min = Integer.MAX_VALUE;
+        int min_ind = -1;
+        for (int i = 0; i < v; i++) {
+            if (!mstSet.contains(i) && key.get(i) < min) {
+                min = key.get(i);
+                min_ind = i;
+            }
+        }
+
+        return min_ind;
     }
+
+    private static void primMST(int[][] adjMat, int v) {
+        Set<Integer> mstSet = new HashSet<>();
+        List<Integer> key = new ArrayList<>();
+        List<Integer> parent = new ArrayList<>();
+        key.add(0);
+        parent.add(-1);
+        for (int i = 1; i < v; i++) {
+            key.add(Integer.MAX_VALUE);
+            parent.add(-1);
+        }
+        while (mstSet.size() != v) {
+            int node = minKey(key, mstSet, v);
+            mstSet.add(node);
+
+            for (int col = 0; col < v; col++) {
+                if (adjMat[node][col] != 0 && !mstSet.contains(col) && adjMat[node][col] < key.get(col)) {
+                    key.set(col, adjMat[node][col]);
+                    parent.set(col, node);
+                }
+            }
+
+        }
+        System.out.println("Edge \tWeight");
+        for (int i = 1; i < parent.size(); i++) {
+            System.out.println(parent.get(i) + " - " + i + "\t" + adjMat[i][parent.get(i)]);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner cin = new Scanner(System.in);
+        int n = cin.nextInt();
+        int adjMat[][] = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                adjMat[i][j] = cin.nextInt();
+            }
+        }
+
+        primMST(adjMat, n);
+        cin.close();
+    }
+
 }
