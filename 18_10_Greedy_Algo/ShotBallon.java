@@ -127,6 +127,7 @@ public class ShotBallon {
         for (int i = 0; i < m; i++) {
             arr[i][0] = cin.nextInt();
             arr[i][1] = cin.nextInt();
+            cin.nextLine();
         }
         minArrow(arr);
         cin.close();

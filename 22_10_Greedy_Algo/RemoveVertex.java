@@ -65,23 +65,20 @@ Dallas: [Tokyo, HongKong]
 
 import java.util.*;
 public class RemoveVertex {
-    private static void rmVertex(Map<String,List<String>> adjList, String target){
+    private static void rmVertex(Map<String,Set<String>> adjList, String target){
         System.out.println("Before removing vertex "+target);
-        for (Map.Entry<String,List<String>> entry : adjList.entrySet()) {
+        for (Map.Entry<String,Set<String>> entry : adjList.entrySet()) {
             System.out.println(entry.getKey()+": "+entry.getValue());
         }
 
-        if(!adjList.containsKey(target)){
-            return;
-        }
-        List<String> remList = adjList.get(target);
+        Set<String> remList = adjList.get(target);
         for (String string : remList) {
             adjList.get(string).remove(target);
         }
         adjList.remove(target);
         System.out.println();
         System.out.println("After removing vertex "+target);
-        for (Map.Entry<String,List<String>> entry : adjList.entrySet()) {
+        for (Map.Entry<String,Set<String>> entry : adjList.entrySet()) {
             System.out.println(entry.getKey()+": "+entry.getValue());
         }
 
@@ -90,10 +87,10 @@ public class RemoveVertex {
         Scanner cin = new Scanner(System.in);
         int v = cin.nextInt();
         cin.nextLine();
-        Map<String, List<String>> adjList = new HashMap<>();
+        Map<String, Set<String>> adjList = new TreeMap<>();
         for (int i = 0; i < v; i++) {
             String t = cin.nextLine();
-            adjList.put(t, new ArrayList<>());
+            adjList.put(t, new TreeSet<>());
         }
         int n = cin.nextInt();
         cin.nextLine();
