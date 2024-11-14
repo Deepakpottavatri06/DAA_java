@@ -50,7 +50,7 @@ import java.util.*;
 
 public class PrimMST {
 
-    private static int minKey(List<Integer> key, Set mstSet, int v) {
+    private static int minKey(List<Integer> key, Set<Integer> mstSet, int v) {
         int min = Integer.MAX_VALUE;
         int min_ind = -1;
         for (int i = 0; i < v; i++) {
