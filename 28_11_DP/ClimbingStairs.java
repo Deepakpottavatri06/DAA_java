@@ -87,6 +87,7 @@ public class ClimbingStairs {
         int n = cin.nextInt();
         if(n==0){
             System.out.println(0);
+            cin.close();
             return;
         }
         n = n+1;

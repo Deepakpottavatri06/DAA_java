@@ -80,6 +80,7 @@ public class MinCostClimbingStairs  {
             cost[i] = cin.nextInt();
          }
          System.out.println(minCost(n,cost));
+         cin.close();
 
     }
 }

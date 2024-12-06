@@ -95,7 +95,5 @@ public class Maze {
         }
         System.out.println(maze(arr,0,0));
         cin.close();
-        Queue<String> t = new ArrayDeque<>();
-        t.poll()
     }
 }
