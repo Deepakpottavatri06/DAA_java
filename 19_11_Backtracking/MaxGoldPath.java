@@ -70,7 +70,7 @@ public class MaxGoldPath {
         maxgold = Math.max(maxgold,helper(grid, i-1, j, currgold));
         maxgold = Math.max(maxgold,helper(grid, i, j+1, currgold));
         maxgold = Math.max(maxgold,helper(grid, i, j-1, currgold));
-
+        grid[i][j] = temp;
         return maxgold;
     }
 
@@ -83,8 +83,8 @@ public class MaxGoldPath {
                     maxgold = Math.max(maxgold, gold);
                 }
             }
+            // System.out.println(Arrays.deepToString(grid));
         }
-
         return maxgold;
     }
     public static void main(String[] args) {

@@ -58,7 +58,7 @@ class Solution {
         BinaryTreeNode left = lowestCommonAncestor(root.left, p, q);
         BinaryTreeNode right = lowestCommonAncestor(root.right, p, q);
         if(left!=null && right!=null){
-            return root;
+            return root; //^ it is the common ancestor
         }
         return (right==null)? left:right;
 
@@ -144,5 +144,6 @@ public class LCA {
             BinaryTreeNode res = sol.lowestCommonAncestor(root, p, q);
             System.out.println(res.data);
         }
+        sc.close();
     }
 }

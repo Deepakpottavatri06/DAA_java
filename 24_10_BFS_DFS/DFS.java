@@ -61,11 +61,11 @@ Sample Output-2:
  */
 
 import java.util.*;
-
+@SuppressWarnings("unchecked")
 class Graph{
     List<Integer>[] adjList;
     Graph(int numVertices){
-        adjList = new List[numVertices];
+        adjList = (List<Integer>[]) new List[numVertices];
         for (int i = 0; i < adjList.length; i++) {
             adjList[i] = new LinkedList<>();
         }

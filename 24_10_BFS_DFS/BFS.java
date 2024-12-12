@@ -54,7 +54,7 @@ Sample Output-2:
 
  */
 import java.util.*;
-
+@SuppressWarnings("unchecked")
 class Graph{
     List<Integer>[] adjList;
     Graph(int numVertices){

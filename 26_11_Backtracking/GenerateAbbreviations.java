@@ -39,7 +39,7 @@ public class GenerateAbbreviations {
     List<String> result = new ArrayList<>();
 
     public void helper(String inp, StringBuilder curr, int i, int J){
-        // J - represents the substring abbreviated as len of sunstring
+        // J - represents the substring abbreviated as len of substring
         // i - current index of character in inp string
 
         if(i==inp.length()){
